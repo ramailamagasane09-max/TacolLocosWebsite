@@ -3,7 +3,7 @@
 ## Student Information
 
 **Student Number:** ST10514633
-**Student Name:** [Your Full Name]
+**Student Name:** Ramaila Magasane
 **Project:** Tacos Locos Website Development
 **Project Type:** Website Development — Part 1
 
