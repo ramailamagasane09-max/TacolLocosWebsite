@@ -319,8 +319,58 @@ body > p:last-of-type {
     margin-bottom: 40px;
 }
 
-/* ---------- Responsive ---------- */
+/* ============================================
+   Responsive Design
+   Desktop: 1025px and above
+   Tablet: 601px - 1024px
+   Mobile: 600px and below
+   ============================================ */
+
+
+/* ---------- Desktop ---------- */
+
+@media (min-width: 1025px) {
+
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+}
+
+
+/* ---------- Tablet ---------- */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    main h2 {
+        font-size: 1.7rem;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .product-card {
+        padding: 15px;
+    }
+
+}
+
+
+/* ---------- Mobile ---------- */
+
 @media (max-width: 600px) {
+
     h1 {
         font-size: 1.9rem;
     }
@@ -342,7 +392,22 @@ body > p:last-of-type {
     main img {
         width: 100%;
     }
+
+    main {
+        padding: 0 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-card {
+        padding: 15px;
+    }
+
 }
+
 /* ============================================
    Products page — 2-per-row picture grid
    Two pictures sit horizontally per row and the rest wrap downwards two by
