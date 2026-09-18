@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <!--Navigation-->
@@ -18,56 +21,212 @@
             <hr>
 
                 <p>
-                    <a href="Index.html">Home</a> | 
-                    <a href="About.html">About Us</a> | 
-                    <a href="Products.html">Products</a> | 
-                    <a href="Enquiry.html">Enquiry</a> | 
+                    <a href="Index.html">Home</a>  
+                    <a href="About.html">About Us</a>  
+                    <a href="Products.html">Products</a>  
+                    <a href="Enquiry.html">Enquiry</a>  
                     <a href="Contact.html">Contact</a>
                 </p>
 
             <hr>
 
             <main>
-                <h2>Welcome to Tacos Locos Products!</h2>
-                
+                <h2><i class="fa-solid fa-utensils"></i>Welcome to Tacos Locos Products!</h2>
+
                 <h3>Order any of our delicous Tacos:</h3>
-                
-                <h2><strong>Tacos</strong></h2>
-                <img src="images/Taco.webp" alt="Tacos Locos Tacos" width="250">
+
+                <!-- ================= TACOS ================= -->
+                <h2><i class="fa-solid fa-pepper-hot"></i><strong>Tacos</strong></h2>
                 <p>Our signature Tacos are made with the freshest ingredients and served with your choice of salsas.</p>
-                <h2><strong>Tacos offered:</strong></h2>
-                <ul>
-                    <li>Fried chicken Tacos</li>
-                    <li>Curried chicken Tacos</li>
-                    <li>Italian style Tacos</li>  
-                </ul>
+
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <img src="images/CHEESEtaco.jpeg" alt="Cheese Tacos" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Cheese Tacos</p>
+                        <p class="product-desc">A soft corn tortilla loaded with melted cheddar and mozzarella cheese.<br>
+                           Made with fire-grilled chicken, fresh salsa and a squeeze of lime.</p>
+                        <p class="product-price">R 45.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/beefTaco.jpeg" alt="Beef Tacos" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Beef Tacos</p>
+                        <p class="product-desc">Seasoned minced beef wrapped in a warm flour tortilla.<br>
+                           Topped with shredded lettuce, diced tomato and sour cream.</p>
+                        <p class="product-price">R 52.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/chadderTACO.jpeg" alt="Cheddar Tacos" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Cheddar Tacos</p>
+                        <p class="product-desc">Crunchy taco shell filled with grilled chicken and rich cheddar sauce.<br>
+                           Finished with jalapenos, red onion and fresh coriander.</p>
+                        <p class="product-price">R 48.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/meansTaco.jpeg" alt="Loaded Meat Tacos" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Loaded Meat Tacos</p>
+                        <p class="product-desc">A hearty double-stacked taco packed with beef and spicy chorizo.<br>
+                           Layered with beans, cheese and smoky chipotle salsa.</p>
+                        <p class="product-price">R 60.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Taco.webp" alt="Fried chicken Tacos" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Fried chicken Tacos</p>
+                        <p class="product-desc">Crispy fried chicken strips folded into a soft tortilla.<br>
+                           Served with lettuce, tomato and creamy chipotle mayonnaise.</p>
+                        <p class="product-price">R 55.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/taconobgrnd.png" alt="Italian style Tacos" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Italian style Tacos</p>
+                        <p class="product-desc">A Mexican-Italian twist with beef, basil and mozzarella.<br>
+                           Drizzled with garlic herb oil inside a toasted tortilla.</p>
+                        <p class="product-price">R 58.00</p>
+                    </div>
+
+                </div>
                 <hr>
 
-                <h2><strong>Burritos</strong></h2>  
-                <img src="images/Burrito.webp" alt="Tacos Locos Burritos" width="250">
+                <!-- ================= BURRITOS ================= -->
+                <h2><i class="fa-solid fa-bowl-food"></i><strong>Burritos</strong></h2>
                 <p>Fill your Burrito with our delicious meats, beans, and vegetables for a hearty meal.</p>
-                <h2><strong>Burritos offered:</strong></h2> 
-                <ul>
-                    <li>Chipotle bean Burritos</li>
-                    <li>Nacho Mexican beef Burritos</li>
-                    <li>BBQ chicken mayonnaise Burritos</li>
-                </ul>
+
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <img src="images/cheesyburitto.jpeg" alt="Cheesy Burrito" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Cheesy Burrito</p>
+                        <p class="product-desc">A soft flour tortilla stuffed with seasoned chicken and rice.<br>
+                           Smothered in melted cheese sauce and pico de gallo.</p>
+                        <p class="product-price">R 65.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/beef burrito.jpeg" alt="Beef Burrito" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Beef Burrito</p>
+                        <p class="product-desc">Slow-cooked shredded beef rolled with black beans and rice.<br>
+                           Wrapped warm with guacamole, salsa and sour cream.</p>
+                        <p class="product-price">R 72.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/beef burrit.jpeg" alt="Mexican Beef Burrito" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Mexican Beef Burrito</p>
+                        <p class="product-desc">Minced beef with chipotle peppers and refried beans.<br>
+                           Topped with jalapenos, cheddar and fresh coriander.</p>
+                        <p class="product-price">R 68.00</p>
+                    </div>
+
+                </div>
                 <hr>
 
-                <h2><strong>Samosas</strong></h2>
-                <img src="images/Samosas.webp" alt="Tacos Locos Samosas" width="250">
+                <!-- ================= SAMOSAS ================= -->
+                <h2><i class="fa-solid fa-cookie-bite"></i><strong>Samosas</strong></h2>
                 <p>Our Samosas are made with melted cheese and your choice of fillings, perfect for a quick snack.</p>
-                <h2><strong>Samosas offered:</strong></h2>
-                <ul>
-                    <li>Chilli cheese Samosas</li>
-                    <li>Jalepino poppers</li>
-                    <li>Jalepino cheese bombs</li>
-                </ul>
+
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <img src="images/Samosa1.jpeg" alt="Chilli cheese Samosas" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Chilli cheese Samosas</p>
+                        <p class="product-desc">Crispy golden pastry parcels filled with chilli and cheese.<br>
+                           Made with potato, green peas and a blend of warm spices.</p>
+                        <p class="product-price">R 30.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/samosaroll.jpeg" alt="Samosa Roll" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Samosa Roll</p>
+                        <p class="product-desc">A long rolled pastry stuffed with spiced beef and cheese.<br>
+                           Deep fried until golden and served with a mint dip.</p>
+                        <p class="product-price">R 38.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Samosas.webp" alt="Jalepino cheese bombs" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Jalepino cheese bombs</p>
+                        <p class="product-desc">Bite-sized pastry bombs packed with jalapenos and cheddar.<br>
+                           Blended with cream cheese and a hint of garlic.</p>
+                        <p class="product-price">R 40.00</p>
+                    </div>
+
+                </div>
+                <hr>
+
+                <!-- ================= WINGS ================= -->
+                <h2><i class="fa-solid fa-drumstick-bite"></i><strong>Wings</strong></h2>
+                <p>Crispy, saucy chicken wings - the perfect side to any order.</p>
+
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <img src="images/chilliwings.jpeg" alt="Chilli Wings" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Chilli Wings</p>
+                        <p class="product-desc">Crispy fried chicken wings tossed in a fiery chilli glaze.<br>
+                           Coated with red chilli flakes, garlic and spring onion.</p>
+                        <p class="product-price">R 58.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/sauceWings.jpeg" alt="Saucy Wings" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Saucy Wings</p>
+                        <p class="product-desc">Deep-fried wings smothered in a sticky BBQ sauce.<br>
+                           Made with smoked paprika, honey and a touch of vinegar.</p>
+                        <p class="product-price">R 62.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/roastedWings.jpeg" alt="Roasted Wings" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Roasted Wings</p>
+                        <p class="product-desc">Oven-roasted wings seasoned with herbs and lemon.<br>
+                           Brushed with olive oil, thyme and cracked black pepper.</p>
+                        <p class="product-price">R 55.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Wings.jpeg" alt="Peri-peri chicken Wings" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Peri-peri chicken Wings</p>
+                        <p class="product-desc">Grilled wings basted in a bold peri-peri marinade.<br>
+                           Made with bird's eye chilli, garlic and fresh lemon.</p>
+                        <p class="product-price">R 64.00</p>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/Wings.webp" alt="Honey garlic chicken Wings" width="250"
+                             style="display: block; margin: 0 auto; border: 4px solid #4b1e82; border-radius: 8px;">
+                        <p class="product-name">Honey garlic chicken Wings</p>
+                        <p class="product-desc">Sticky wings glazed in honey and roasted garlic.<br>
+                           Finished with sesame seeds and chopped coriander.</p>
+                        <p class="product-price">R 66.00</p>
+                    </div>
+
+                </div>
                 <hr>
 
             </main>
       </header>
-      <h4> Tacos Locos</h4>
+      <h4><i class="fa-solid fa-pepper-hot"></i>Tacos Locos</h4>
       <p>&copy; 2015 Tacos Locos. All rights reserved.</p>
 </body>
 </html>

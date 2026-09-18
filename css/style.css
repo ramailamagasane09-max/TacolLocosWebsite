@@ -1,0 +1,431 @@
+/* ============================================
+   Tacos Locos - Global Stylesheet
+   Palette: White background, black text,
+            purple section containers
+   ============================================ */
+
+:root {
+    --purple: #4b1e82;
+    --purple-dark: #34135c;
+    --purple-light: #ede6f7;
+    --black: #111;
+    --white: #ffffff;
+    --grey: #f4f4f4;
+    --pink: #ffcce8;        /* princess pink page background */
+    --pink-soft: #ffe6f4;   /* lighter princess pink for cards */
+}
+
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--pink);
+    color: var(--black);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: var(--pink);
+    color: var(--black);
+    padding: 0;
+}
+
+header nav {
+    max-width: none;
+    width: 110%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: var(--black);
+}
+
+header nav > h1,
+header nav > ul,
+header nav > p {
+    background-color: var(--purple);
+    margin: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+}
+
+
+header nav > img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 0 auto;
+    padding: 8px 8px 8px 8px;
+    border-radius: 50%;
+    background-color: var(--purple);
+}
+
+
+header nav > img[width] {
+    background-image: none;
+}
+
+header nav > h1 {
+    padding-top: 6px;
+    padding-bottom: 12px;
+}
+
+header nav > ul,
+header nav > p {
+    padding-top: 10px;
+    padding-bottom: 24px;
+}
+
+header nav > p:has(a) {
+    padding-top: 14px;
+    padding-bottom: 24px;
+}
+
+header nav > hr {
+    margin: 0;
+}
+
+/* Hide the decorative horizontal rules inside the nav bar */
+header hr {
+    display: none;
+}
+
+/* Main content sits on the princess pink background. */
+header > nav > main,
+header main,
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+    background-color: var(--pink);
+}
+
+/* <main> is a sibling of the top-strip children, so it must never inherit the
+   purple band. Keep it on the princess pink page background. */
+header nav > main {
+    background-color: var(--pink);
+}
+
+/* ---------- Page titles (h1) ---------- */
+h1 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 18px 0;
+    color: var(--white);
+}
+
+/* On pages where a page-title heading sits on the white body (not the
+   purple bar) it must be bold BLACK on white. */
+main h1 {
+    color: var(--black);
+}
+
+/* ---------- Navigation links ---------- */
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* The separator bars between the links. Child selector only — a descendant
+   selector would also reach the paragraphs inside <main>, which is nested in
+   the nav on these pages, and turn the body text white-on-white. */
+header nav > p {
+    color: var(--white);
+    font-weight: 700;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 6px 8px;
+}
+
+header nav ul li a,
+header nav > p a {
+    display: inline-block;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+header nav ul li a:hover,
+header nav p a:hover {
+    background-color: var(--white);
+    color: var(--purple);
+}
+
+/* ---------- Main content area ---------- */
+main {
+    display: block;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 25px;
+}
+
+/* Headers inside main: bold black text */
+main h2 {
+    font-size: 1.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--black);
+    margin: 0 0 15px 0;
+}
+
+main h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--black);
+    margin: 0 0 12px 0;
+}
+
+main p {
+    color: var(--black) !important;
+    margin: 0 0 15px 0;
+}
+
+/* <main> lives inside the centred nav on these pages, so reset its own text
+   back to left-aligned for readable body copy and lists. */
+main {
+    text-align: left;
+}
+
+main hr {
+    border: none;
+    border-top: 3px solid var(--purple-light);
+    margin: 30px 0;
+}
+
+/* ---------- Purple content containers ---------- */
+main ul,
+main form {
+    background-color: var(--purple-light);
+    border-left: 8px solid var(--purple);
+    border-radius: 8px;
+    padding: 20px 30px 20px 50px;
+    margin: 0 0 20px 0;
+    text-align: left;
+}
+
+main ul li {
+    color: var(--black);
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+/* Images sit nicely beneath their headings */
+main img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border: 4px solid var(--purple);
+    border-radius: 8px;
+}
+
+/* ---------- Forms ---------- */
+main form {
+    padding: 25px 30px;
+}
+
+main form p {
+    margin-bottom: 18px;
+}
+
+label,
+label + br {
+    font-weight: 700;
+    color: var(--black);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    max-width: 480px;
+    padding: 10px 12px;
+    margin-top: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--black);
+    background-color: var(--white);
+    border: 2px solid var(--purple);
+    border-radius: 6px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--purple-dark);
+    box-shadow: 0 0 0 3px var(--purple-light);
+}
+
+textarea {
+    max-width: 100%;
+}
+
+/* ---------- Buttons ---------- */
+button {
+    background-color: var(--purple);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 14px 34px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--purple-dark);
+}
+
+/* ---------- Map iframe ---------- */
+iframe {
+    max-width: 100%;
+    border: 4px solid var(--purple);
+    border-radius: 8px;
+}
+
+/* ---------- Footer ---------- */
+h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--black);
+    margin: 40px 0 5px 0;
+}
+
+body > p:last-of-type {
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 40px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    main h2 {
+        font-size: 1.5rem;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 6px 0;
+    }
+
+    header nav ul li a,
+    header nav p a {
+        display: block;
+    }
+
+    main img {
+        width: 100%;
+    }
+}
+/* ============================================
+   Products page — 2-per-row picture grid
+   Two pictures sit horizontally per row and the rest wrap downwards two by
+   two. Each product card lifts and highlights when you hover over it.
+   All CSS only — no JavaScript.
+   ============================================ */
+
+/* The wrapper around each category's products becomes a 2-column grid. */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 20px 0;
+    justify-items: center;
+}
+
+/* Each product card (picture + name + description + price) */
+.product-card {
+    background-color: var(--pink-soft);
+    border: 4px solid var(--purple);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+                background-color 0.25s ease;
+}
+
+/* Hover effect on every container */
+.product-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 26px rgba(75, 30, 130, 0.45);
+    background-color: #ffd9ee;
+}
+
+.product-card img {
+    display: block;
+    margin: 0 auto;
+    border: 4px solid var(--purple);
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card .product-name {
+    font-weight: 700;
+    color: var(--black);
+    margin: 10px 0 4px 0;
+}
+
+.product-card .product-desc {
+    color: var(--black);
+    margin: 0 0 6px 0;
+}
+
+.product-card .product-price {
+    color: var(--purple);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* On narrow screens drop to a single column so pictures stay readable. */
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ============================================
+   Font Awesome icons on headers
+   ============================================ */
+
+/* Space the icon away from the heading text */
+main h2 i,
+main h3 i,
+h1 i,
+h4 i {
+    color: var(--purple);
+    margin-right: 10px;
+}
+
+/* Icons on the purple top bar stay white to match the bar */
+header nav > h1 i {
+    color: var(--white);
+}
