@@ -198,3 +198,17 @@ All changes made for **Part 3**, dated 1 November 2026.
 - `sitemap.xml` is retained at the root.
 
 Open `index.html` to run the site locally. The Leaflet map and Font Awesome remain external CDN dependencies as in the original project.
+
+Reference:
+
+Font Awesome (n.d.) Font Awesome icons. Available at: https://fontawesome.com/ (Accessed: 2 November 2026).
+
+GitHub (n.d.) GitHub documentation. Available at: https://docs.github.com/ (Accessed: 2 November 2026).
+
+Leaflet (n.d.) Leaflet: an open-source JavaScript library for interactive maps. Available at: https://leafletjs.com/ (Accessed: 2 November 2026).
+
+MDN Web Docs (n.d.) JavaScript documentation. Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript (Accessed: 2 November 2026).
+
+Netlify (n.d.) Netlify documentation. Available at: https://docs.netlify.com/ (Accessed: 2 November 2026).
+
+OpenStreetMap (n.d.) OpenStreetMap: collaborative mapping project. Available at: https://www.openstreetmap.org/ (Accessed: 2 November 2026).
