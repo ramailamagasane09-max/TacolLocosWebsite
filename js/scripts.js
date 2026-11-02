@@ -1,3 +1,18 @@
+
+
+/* ==================== main.js ==================== */
+
+/* ==========================================================================
+   Tacos Locos - main.js  (loaded on every page)
+   Shared helpers and site-wide interactive features:
+     - DOM helper + toast notifications
+     - Current-page highlight in the navigation
+     - Scroll-reveal animations and back-to-top button
+     - Accordion component (About page)
+     - Reusable accessible modal dialog (used by the Products page)
+     - "Open now / Closed" status badge based on business hours
+     - Social share buttons
+   ========================================================================== */
 (function () {
     'use strict';
 
