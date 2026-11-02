@@ -1,0 +1,46 @@
+/* ================================================================
+   1. TAG SELECTOR (BODY)
+   Applies a broad style to the entire page.
+   The body selector affects all content inside <body>.
+   ===================================================================
+   */
+
+
+/* body {
+    font-family: Arial, sans-serif;
+    color: rgb(27, 2, 42);
+    background-color: rgb(176, 51, 211);
+    padding: 5px;
+}
+
+/* ===============================================================
+   2.GROUPING SELECTOR (HEADINGS)
+   Applies the same styles to several selectors.
+   This saves repeating the same CSS code.
+   This changes all h1, h2 and h3 headings.
+   ==============================================================
+   */
+/*
+h1,
+h2,
+h3{
+    font-family: Georgia, serif;
+    color:rgb(35, 4, 54)
+}
+
+*/
+
+nav{
+    margin-top: 10%;
+    background: rgba(rgb(85, 11, 106));
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    position: fixed;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2rem;
+    border-radius: 30px;
+    border: 1px solid rgba(rgb(251, 29, 255));
+    box-shadow: 0 6px 6px rgba(rgb(14, 1, 15));
+}
