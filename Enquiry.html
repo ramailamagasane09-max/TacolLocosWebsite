@@ -1,94 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Enquire &amp; Get a Catering Quote | Tacos Locos Cape Town</title>
+    <meta name="description" content="Send a Tacos Locos enquiry for tacos, burritos, samosas or wings. Get an instant price estimate and availability for catering, custom orders and events in Cape Town.">
+    <meta name="keywords" content="catering quote Cape Town, Mexican catering, order tacos for events, custom food orders, Tacos Locos enquiry">
+    <meta name="author" content="Tacos Locos">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4b1e82">
+    <link rel="canonical" href="https://tacos-locos.netlify.app/enquiry.html">
+
+    <!-- Security: Content Security Policy and referrer policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27; https://cdnjs.cloudflare.com; font-src &#x27;self&#x27; https://cdnjs.cloudflare.com; img-src &#x27;self&#x27; data:; connect-src &#x27;self&#x27; https://jsonplaceholder.typicode.com; form-action &#x27;self&#x27; mailto: https://jsonplaceholder.typicode.com; base-uri &#x27;self&#x27;; object-src &#x27;none&#x27;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tacos Locos">
+    <meta property="og:title" content="Enquire &amp; Get a Catering Quote | Tacos Locos Cape Town">
+    <meta property="og:description" content="Send a Tacos Locos enquiry for tacos, burritos, samosas or wings. Get an instant price estimate and availability for catering, custom orders and events in Cape Town.">
+    <meta property="og:url" content="https://tacos-locos.netlify.app/enquiry.html">
+    <meta property="og:image" content="https://tacos-locos.netlify.app/images/tacos-locos-food-truck.webp">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/webp" href="images/tacos-locos-logo.webp">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <link rel="stylesheet" href="css/style.css">
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!--Navigation-->
       <header>
-        <nav>
-            <img src="images/Logo.webp" 
-                 alt="Tacos Locos logo" 
-                 width="120">
+        <nav aria-label="Main navigation">
+            <img src="images/tacos-locos-logo.webp"
+                 alt="Tacos Locos logo"
+                 width="150" height="150">
 
             <h1>Make an Enquiry</h1>
             <p>Ask us what you would like to know!</p>
 
             <hr>
 
-                <p>
-                    <a href="Index.html">Home</a> 
-                    <a href="About.html">About Us</a> 
-                    <a href="Products.html">Products</a> 
-                    <a href="Enquiry.html">Enquiry</a> 
-                    <a href="Contact.html">Contact</a>
-                </p>
-
-            <hr>
-            
-            <main>
-
-            <h2><i class="fa-solid fa-clipboard-list"></i>Enquiry Form</h2>
-            <p>Please fill out this form and you will be contacted shortly.</p>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
 
             <hr>
 
-            <h3><i class="fa-solid fa-user"></i>Personal Information</h3>
+            <main id="main-content">
+                <h2><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>Enquiry Form</h2>
+                <p>Please fill out this form and you will be contacted shortly. Fields marked <span class="req">*</span> are required. After you submit you will see an estimated price and whether we can serve you on your chosen date. Want to see what we offer first? Check the <a class="text-link" href="products.html">menu</a>.</p>
 
-            <p>First Name:</p>
-            <input type="text" id="firstname" name="firstname" placeholder="Enter your first name">
+                <hr>
 
-            <p>Last Name:</p>
-            <input type="text" id="lastname" name="lastname" placeholder="Enter your last name">
+                <form id="enquiry-form" action="https://jsonplaceholder.typicode.com/posts" method="post" novalidate
+                      data-endpoint="https://jsonplaceholder.typicode.com/posts" aria-label="Enquiry form">
 
-            <p>Email:</p>
-            <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <h3><i class="fa-solid fa-user" aria-hidden="true"></i>Personal Information</h3>
+                    <div class="form-row">
+                    <div class="form-field">
+                        <label for="firstname">First Name <span class="req" aria-hidden="true">*</span></label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" autocomplete="given-name" maxlength="40" required data-validate="name" data-label="First name">
+                        <span class="field-error" id="firstname-error" role="alert"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="lastname">Last Name <span class="req" aria-hidden="true">*</span></label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" autocomplete="family-name" maxlength="40" required data-validate="name" data-label="Last name">
+                        <span class="field-error" id="lastname-error" role="alert"></span>
+                    </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" maxlength="254" required data-validate="email">
+                        <span class="field-error" id="email-error" role="alert"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="telephone">Telephone Number</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="e.g. 064 535 5494" autocomplete="tel" maxlength="20" inputmode="tel" data-validate="phone" data-required-if="contactmethod" aria-describedby="telephone-hint telephone-error">
+                        <span class="form-hint" id="telephone-hint">South African number. Required only if you want to be contacted by telephone.</span>
+                        <span class="field-error" id="telephone-error" role="alert"></span>
+                    </div>
 
-            <p>Telephone Number:</p>
-            <input type="tel" id="telephone" name="telephone" placeholder="Enter your telephone number">
+                    <h3><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>Order Information</h3>
+                    <div class="form-field">
+                        <label for="category">What would you like to enquire about? <span class="req" aria-hidden="true">*</span></label>
+                        <select id="category" name="category" required data-validate="select" data-label="a category">
+                            <option value="">Choose a category</option>
+                            <option value="tacos">Tacos</option>
+                            <option value="burritos">Burritos</option>
+                            <option value="samosas">Samosas</option>
+                            <option value="wings">Wings</option>
+                        </select>
+                        <span class="field-error" id="category-error" role="alert"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="quantity">Number of Items <span class="req" aria-hidden="true">*</span></label>
+                        <input type="number" id="quantity" name="quantity" placeholder="Enter the number of items" min="1" max="500" step="1" inputmode="numeric" required data-validate="quantity">
+                        <span class="field-error" id="quantity-error" role="alert"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="eventdate">Event Date <span class="req" aria-hidden="true">*</span></label>
+                        <input type="date" id="eventdate" name="eventdate" required data-validate="date">
+                        <span class="form-hint" id="eventdate-hint">Pick the day you need your order. Catering needs 3 days notice and custom orders 5 days.</span>
+                        <span class="field-error" id="eventdate-error" role="alert"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="additionalservices">Type of Service <span class="req" aria-hidden="true">*</span></label>
+                        <select id="additionalservices" name="additionalservices" required data-validate="select" data-label="a service">
+                            <option value="standard">Standard order (collection)</option>
+                            <option value="catering">Catering</option>
+                            <option value="custom">Custom Orders</option>
+                        </select>
+                        <span class="field-error" id="additionalservices-error" role="alert"></span>
+                    </div>
 
-            <h2><i class="fa-solid fa-cart-shopping"></i>Order Information</h2>
+                    <h3><i class="fa-solid fa-comments" aria-hidden="true"></i>Contact Preferences</h3>
+                    <div class="form-field">
+                        <label for="contactmethod">Preferred Contact Method <span class="req" aria-hidden="true">*</span></label>
+                        <select id="contactmethod" name="contactmethod" required data-validate="select" data-label="a contact method">
+                            <option value="email">Email</option>
+                            <option value="telephone">Telephone</option>
+                        </select>
+                        <span class="field-error" id="contactmethod-error" role="alert"></span>
+                    </div>
 
-            <p>Number of Items:</p>
-            <input type="number" id="quantity" name="quantity" placeholder="Enter the number of items">
+                    <h3><i class="fa-solid fa-pen" aria-hidden="true"></i>Additional Comments</h3>
+                    <div class="form-field">
+                        <label for="comments">Comments or questions</label>
+                        <textarea id="comments" name="comments" rows="4" cols="50" maxlength="500" placeholder="Enter any additional comments or questions here" data-validate="message" data-counter aria-describedby="comments-count"></textarea>
+                        <span class="char-count" id="comments-count"></span>
+                        <span class="field-error" id="comments-error" role="alert"></span>
+                    </div>
 
-            <p>Event Date:</p>
-            <input type="date" id="eventdate" name="eventdate">
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="website">Leave this field empty</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
 
-            <h2><i class="fa-solid fa-comments"></i>Contact Preferences</h2>
+                    <div class="form-status" role="status" aria-live="polite"></div>
 
-            <p>Preferred Contact Method:</p>
-            <select id="contactmethod" name="contactmethod">
-                <option value="email">Email</option>
-                <option value="telephone">Telephone</option>
-            </select>
+                    <div class="form-actions">
+                        <button type="submit">Submit Enquiry</button>
+                        <button type="reset" class="btn-outline">Clear form</button>
+                    </div>
+                </form>
 
-            <hr>
-
-            <h2><i class="fa-solid fa-truck"></i>Additional Services </h2>
-            <select id="additionalservices" name="additionalservices">
-                <option value="Delivery">Catering</option>
-                <option value="Custom Orders">Custom Orders</option>
-            </select>
-
-            <hr>
-
-            <h2><i class="fa-solid fa-pen"></i>Additional Comments</h2>
-            <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter any additional comments or questions here"></textarea>
-
-            <p>
-                <button type="submit">Submit Enquiry</button>
+                <div id="enquiry-result" class="response-panel" role="region" aria-live="polite" aria-label="Your quote" hidden></div>
 
             </main>
-                
-
-                
         </nav>
-      </header
+      </header>
+      <h4><i class="fa-solid fa-pepper-hot" aria-hidden="true"></i>Tacos Locos</h4>
+      <p>&copy; 2015-<span data-year>2026</span> Tacos Locos. All rights reserved.</p>
+    <script src="js/scripts.js" defer></script>
 </body>
 </html>

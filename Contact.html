@@ -1,136 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact &amp; Find Us | Tacos Locos Cape Town</title>
+    <meta name="description" content="Contact Tacos Locos at 364 Victoria Road, Cape Town. See our opening hours, find us on the interactive map, call 064 535 5494 or send us a message online.">
+    <meta name="keywords" content="Tacos Locos contact, Mexican food Cape Town address, opening hours, 364 Victoria Road Cape Town, phone number">
+    <meta name="author" content="Tacos Locos">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4b1e82">
+    <link rel="canonical" href="https://tacos-locos.netlify.app/contact.html">
+
+    <!-- Security: Content Security Policy and referrer policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; https://unpkg.com; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27; https://cdnjs.cloudflare.com https://unpkg.com; font-src &#x27;self&#x27; https://cdnjs.cloudflare.com; img-src &#x27;self&#x27; data: https://tile.openstreetmap.org https://unpkg.com; connect-src &#x27;self&#x27; https://jsonplaceholder.typicode.com; form-action &#x27;self&#x27; mailto: https://jsonplaceholder.typicode.com; base-uri &#x27;self&#x27;; object-src &#x27;none&#x27;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tacos Locos">
+    <meta property="og:title" content="Contact &amp; Find Us | Tacos Locos Cape Town">
+    <meta property="og:description" content="Contact Tacos Locos at 364 Victoria Road, Cape Town. See our opening hours, find us on the interactive map, call 064 535 5494 or send us a message online.">
+    <meta property="og:url" content="https://tacos-locos.netlify.app/contact.html">
+    <meta property="og:image" content="https://tacos-locos.netlify.app/images/tacos-locos-food-truck.webp">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/webp" href="images/tacos-locos-logo.webp">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <link rel="stylesheet" href="css/style.css">
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Tacos Locos",
+  "description": "Mexican street food in Cape Town: tacos, burritos, samosas and wings, made fresh daily.",
+  "url": "https://tacos-locos.netlify.app/",
+  "logo": "https://tacos-locos.netlify.app/images/tacos-locos-logo.webp",
+  "image": "https://tacos-locos.netlify.app/images/tacos-locos-food-truck.webp",
+  "telephone": "+27645355494",
+  "email": "info@tacoslocos.co.za",
+  "servesCuisine": [
+    "Mexican",
+    "Street food"
+  ],
+  "priceRange": "R30 - R72",
+  "foundingDate": "2015",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "364 Victoria Road",
+    "addressLocality": "Cape Town",
+    "addressRegion": "Western Cape",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.9358606,
+    "longitude": 18.461234
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday"
+      ],
+      "opens": "12:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Wednesday"
+      ],
+      "opens": "12:00",
+      "closes": "20:15"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Thursday"
+      ],
+      "opens": "12:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "12:00",
+      "closes": "20:30"
+    }
+  ],
+  "hasMenu": "https://tacos-locos.netlify.app/products.html"
+}
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!--Navigation-->
       <header>
-        <nav>
-            <img src="images/Logo.webp" 
-                 alt="Tacos Locos logo" 
-                 width="120">
+        <nav aria-label="Main navigation">
+            <img src="images/tacos-locos-logo.webp"
+                 alt="Tacos Locos logo"
+                 width="150" height="150">
 
             <h1>Tacos Locos - Contact</h1>
 
             <hr>
 
-                <p>
-                    <a href="Index.html">Home</a>
-                    <a href="About.html">About Us</a> 
-                    <a href="Products.html">Products</a> 
-                    <a href="Enquiry.html">Enquiry</a> 
-                    <a href="Contact.html">Contact</a>
-                </p>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
 
             <hr>
 
-            <main>
-                <h2><i class="fa-solid fa-phone"></i>Contact Us</h2>
-                <p>If you have any questions or comments, please feel free to contact us using the information below:</p>
+            <main id="main-content">
+                <h2><i class="fa-solid fa-phone" aria-hidden="true"></i>Contact Us</h2>
+                <p>If you have any questions or comments, please feel free to contact us using the information below. Planning an event? Our <a class="text-link" href="enquiry.html">enquiry form</a> gives you an instant price estimate.</p>
 
                 <ul>
-                    <li>Email: info@tacoslocos.co.za</li>
-                    <li>Phone: 064 535 5494</li>
+                    <li>Email: <a class="text-link" href="mailto:info@tacoslocos.co.za">info@tacoslocos.co.za</a></li>
+                    <li>Phone: <a class="text-link" href="tel:+27645355494">064 535 5494</a></li>
                     <li>364 Victoria Road, Cape Town</li>
                 </ul>
 
                 <hr>
 
-                <h2><i class="fa-regular fa-clock"></i>Business Hours</h2>
-                <ul>
-                    <li>Monday - Tuesday: 12:00 AM - 20:00 PM</li>
-                    <li>Wednesday: 12:00 AM - 20:15 PM</li>
-                    <li>Thursday: 12:00 AM - 20:00 PM</li>
-                    <li>Friday - Saturday: 12:00 AM - 20:30 PM</li>
-                    <li>Sunday: Closed</li>
+                <h2><i class="fa-regular fa-clock" aria-hidden="true"></i>Business Hours</h2>
+                <p class="status-line"><span class="open-badge" data-open-status>Checking opening hours...</span></p>
+                <ul id="hours-list" class="hours-list">
+                    <li data-days="1,2">Monday - Tuesday: 12:00 - 20:00</li>
+                    <li data-days="3">Wednesday: 12:00 - 20:15</li>
+                    <li data-days="4">Thursday: 12:00 - 20:00</li>
+                    <li data-days="5,6">Friday - Saturday: 12:00 - 20:30</li>
+                    <li data-days="0">Sunday: Closed</li>
                 </ul>
 
                 <hr>
 
-                <h2><i class="fa-solid fa-location-dot"></i>Find Us</h2>
-                <p>Use the map below to find us:</p>
+                <h2 id="find-us"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Find Us</h2>
+                <p>Use the map below to find us. Click the map to zoom with your mouse wheel, or drag it to look around.</p>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.204788512476!2d18.461233999999994!3d-33.935860600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5d037e2c2493%3A0xbbe1201fcd9d5fed!2sTacos%20Locos!5e0!3m2!1sen!2sza!4v1786708717511!5m2!1sen!2sza"
-                width="600"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin">
+                <div id="map" class="map" role="region" aria-label="Interactive map showing Tacos Locos at 364 Victoria Road, Cape Town"></div>
+                <noscript><p>The interactive map needs JavaScript. <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=-33.9358606,18.461234" target="_blank" rel="noopener noreferrer">Open Tacos Locos in Google Maps</a>.</p></noscript>
 
-                </iframe>
+                <div class="map-actions">
+                    <button type="button" id="locate-btn" class="btn-small" hidden><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> How far am I?</button>
+                    <a class="btn-small btn-outline" href="https://www.google.com/maps/dir/?api=1&amp;destination=-33.9358606,18.461234" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                </div>
+                <p id="locate-result" role="status" aria-live="polite"></p>
 
                 <hr>
 
                 <!--Contact form-->
-                <h2><i class="fa-solid fa-envelope"></i>Contact Form</h2>
+                <h2><i class="fa-solid fa-envelope" aria-hidden="true"></i>Contact Form</h2>
+                <p>Fields marked <span class="req">*</span> are required. After you send the form we will prepare an email for you to send to our team.</p>
 
-                <form>
-                    <p>
+                <form id="contact-form" action="mailto:info@tacoslocos.co.za" method="post" enctype="text/plain" novalidate
+                      data-endpoint="https://jsonplaceholder.typicode.com/posts" data-email="info@tacoslocos.co.za" aria-label="Contact form">
+                    <div class="form-field">
+                        <label for="contactname">Name <span class="req" aria-hidden="true">*</span></label>
+                        <input type="text" id="contactname" name="contactname" placeholder="Enter your name" autocomplete="name" maxlength="40" required data-validate="name" data-label="Name">
+                        <span class="field-error" id="contactname-error" role="alert"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="contactemail">Email <span class="req" aria-hidden="true">*</span></label>
+                        <input type="email" id="contactemail" name="contactemail" placeholder="Enter your email" autocomplete="email" maxlength="254" required data-validate="email">
+                        <span class="field-error" id="contactemail-error" role="alert"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="contactphone">Phone number (optional)</label>
+                        <input type="tel" id="contactphone" name="contactphone" placeholder="e.g. 064 535 5494" autocomplete="tel" maxlength="20" inputmode="tel" data-validate="phone">
+                        <span class="field-error" id="contactphone-error" role="alert"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="messagetype">Type of message <span class="req" aria-hidden="true">*</span></label>
+                        <select id="messagetype" name="messagetype" required data-validate="select" data-label="a message type">
+                            <option value="">Choose a message type</option>
+                            <option value="general">General question</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="compliment">Compliment</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="partnership">Partnership or collaboration</option>
+                        </select>
+                        <span class="field-error" id="messagetype-error" role="alert"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="contactmessage">Message <span class="req" aria-hidden="true">*</span></label>
+                        <textarea id="contactmessage" name="contactmessage" rows="6" cols="50" minlength="10" maxlength="1000" required placeholder="Enter your message" data-validate="message" data-counter aria-describedby="contactmessage-count"></textarea>
+                        <span class="char-count" id="contactmessage-count"></span>
+                        <span class="field-error" id="contactmessage-error" role="alert"></span>
+                    </div>
 
-                        <label for="name">
-                            Name:
-                        </label>
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="website">Leave this field empty</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
 
-                        <br>
+                    <div class="form-status" role="status" aria-live="polite"></div>
 
-                        <input type="text"
-                         id="contactname"
-                         name="contactname"
-                         placeholder="Enter your name">
-
-                    </p>
-
-                    <p>
-
-                        <label for="contactemail">
-                            Email:
-                        </label>
-
-                        <br>
-
-                        <input type="email"
-                         id="contactemail"
-                         name="contactemail"
-                         placeholder="Enter your email">
-
-                    </p>
-
-                    <p>
-
-                        <label for="contactmessage">
-                            Message:
-                        </label>
-
-                        <br>
-
-                        <textarea id="contactmessage"
-                                  name="contactmessage"
-                                  rows="6"
-                                  cols="50"
-                                  placeholder="Enter your message">
-                                  </textarea>
-                    </p>
-
-                    <p>
-                        <button type="submit">
-                            Send Message
-                        </button>
-
-                    </p>
-
+                    <div class="form-actions">
+                        <button type="submit">Send Message</button>
+                        <button type="reset" class="btn-outline">Clear form</button>
+                    </div>
                 </form>
 
+                <div id="contact-result" class="response-panel" role="region" aria-live="polite" aria-label="Your email" hidden></div>
+
+                <div class="share-row" data-share></div>
             </main>
         </nav>
       </header>
-      <h4><i class="fa-solid fa-pepper-hot"></i>Tacos Locos</h4>
-      <p>&copy; 2015 Tacos Locos. All rights reserved.</p>
+      <h4><i class="fa-solid fa-pepper-hot" aria-hidden="true"></i>Tacos Locos</h4>
+      <p>&copy; 2015-<span data-year>2026</span> Tacos Locos. All rights reserved.</p>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+    <script src="js/scripts.js" defer></script>
 </body>
 </html>

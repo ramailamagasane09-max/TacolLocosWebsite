@@ -1,63 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About Tacos Locos | Our Story, Mission &amp; Values</title>
+    <meta name="description" content="Meet Tacos Locos, a Cape Town Mexican street food business. Read about who we are, our mission, our vision and the values behind every taco and burrito.">
+    <meta name="keywords" content="about Tacos Locos, Mexican food business Cape Town, Mexican restaurant mission and values, local street food">
+    <meta name="author" content="Tacos Locos">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4b1e82">
+    <link rel="canonical" href="https://tacos-locos.netlify.app/about.html">
+
+    <!-- Security: Content Security Policy and referrer policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27; https://cdnjs.cloudflare.com; font-src &#x27;self&#x27; https://cdnjs.cloudflare.com; img-src &#x27;self&#x27; data:; connect-src &#x27;self&#x27; https://jsonplaceholder.typicode.com; form-action &#x27;self&#x27; mailto: https://jsonplaceholder.typicode.com; base-uri &#x27;self&#x27;; object-src &#x27;none&#x27;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tacos Locos">
+    <meta property="og:title" content="About Tacos Locos | Our Story, Mission &amp; Values">
+    <meta property="og:description" content="Meet Tacos Locos, a Cape Town Mexican street food business. Read about who we are, our mission, our vision and the values behind every taco and burrito.">
+    <meta property="og:url" content="https://tacos-locos.netlify.app/about.html">
+    <meta property="og:image" content="https://tacos-locos.netlify.app/images/tacos-locos-food-truck.webp">
+    <meta property="og:locale" content="en_ZA">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/webp" href="images/tacos-locos-logo.webp">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <link rel="stylesheet" href="css/style.css">
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!--Navigation-->
       <header>
-        <nav>
-            <img src="images/Logo.webp" 
-                 alt="Tacos Locos logo" 
-                 width="120">
+        <nav aria-label="Main navigation">
+            <img src="images/tacos-locos-logo.webp"
+                 alt="Tacos Locos logo"
+                 width="150" height="150">
 
             <h1>Tacos Locos - About Us</h1>
 
             <hr>
 
-                <p>
-                    <a href="Index.html">Home</a> 
-                    <a href="About.html">About Us</a> 
-                    <a href="Products.html">Products</a>  
-                    <a href="Enquiry.html">Enquiry</a> 
-                    <a href="Contact.html">Contact</a>
-                </p>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
 
             <hr>
 
-            <main>
-                <h2><i class="fa-solid fa-users"></i>Who We Are</h2>
-                <p> Tacos Locos is a local food business that provides delicious and freshly prepared Mexican-inspired food to individuals and families in the community.</p>
-                <p> Our goal is to bring the authentic flavors of Mexico to your plate, using only the finest ingredients and time-honored recipes.</p>
+            <main id="main-content">
+                <h2><i class="fa-solid fa-circle-info" aria-hidden="true"></i>Get to Know Tacos Locos</h2>
+                <p>Learn about the Cape Town Mexican street food business behind the tacos, burritos, samosas and wings. Select a heading to open or close it.</p>
+
+                <p class="accordion-tools"><button type="button" class="btn-small btn-outline" data-accordion-toggle-all>Expand all</button></p>
+
+                <div class="accordion" data-accordion>
+                    <div class="accordion-item">
+                        <h2 class="accordion-heading">
+                            <button type="button" class="accordion-trigger" id="acc-btn-1" aria-expanded="true" aria-controls="acc-panel-1">
+                                <span><i class="fa-solid fa-users" aria-hidden="true"></i>Who We Are</span>
+                                <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                            </button>
+                        </h2>
+                        <div class="accordion-panel" id="acc-panel-1" role="region" aria-labelledby="acc-btn-1">
+                            <div class="accordion-panel-inner">
+                                <p> Tacos Locos is a local food business that provides delicious and freshly prepared Mexican-inspired food to individuals and families in the community.</p>
+                                <p> Our goal is to bring the authentic flavors of Mexico to your plate, using only the finest ingredients and time-honored recipes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-heading">
+                            <button type="button" class="accordion-trigger" id="acc-btn-2" aria-expanded="false" aria-controls="acc-panel-2">
+                                <span><i class="fa-solid fa-bullseye" aria-hidden="true"></i>Our Mission</span>
+                                <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                            </button>
+                        </h2>
+                        <div class="accordion-panel" id="acc-panel-2" role="region" aria-labelledby="acc-btn-2">
+                            <div class="accordion-panel-inner">
+                                <p> At Tacos Locos, our mission is to provide our customers with a memorable dining experience that combines great food, excellent service, and a welcoming atmosphere. We strive to create a community of food lovers who appreciate the art of Mexican cuisine.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-heading">
+                            <button type="button" class="accordion-trigger" id="acc-btn-3" aria-expanded="false" aria-controls="acc-panel-3">
+                                <span><i class="fa-solid fa-eye" aria-hidden="true"></i>Our Vision</span>
+                                <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                            </button>
+                        </h2>
+                        <div class="accordion-panel" id="acc-panel-3" role="region" aria-labelledby="acc-btn-3">
+                            <div class="accordion-panel-inner">
+                                <p> Our vision is to become the leading provider of Mexican-inspired food in Cape Town, known for our commitment to quality, innovation, and customer satisfaction. We aim to expand our reach and bring the flavors of Mexico to more people, while staying true to our roots and values.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-heading">
+                            <button type="button" class="accordion-trigger" id="acc-btn-4" aria-expanded="false" aria-controls="acc-panel-4">
+                                <span><i class="fa-solid fa-heart" aria-hidden="true"></i>Our Values</span>
+                                <i class="fa-solid fa-chevron-down accordion-icon" aria-hidden="true"></i>
+                            </button>
+                        </h2>
+                        <div class="accordion-panel" id="acc-panel-4" role="region" aria-labelledby="acc-btn-4">
+                            <div class="accordion-panel-inner">
+                                <ul>
+                                    <li>Quality</li>
+                                    <li>Innovation</li>
+                                    <li>Customer Satisfaction</li>
+                                    <li>Community</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <hr>
 
-                <h2><i class="fa-solid fa-bullseye"></i>Our Mission</h2>
-                <p> At Tacos Locos, our mission is to provide our customers with a memorable dining experience that combines great food, excellent service, and a welcoming atmosphere. We strive to create a community of food lovers who appreciate the art of Mexican cuisine.</p>
+                <h2><i class="fa-solid fa-utensils" aria-hidden="true"></i>Hungry?</h2>
+                <p>See what is on offer on our <a class="text-link" href="products.html">menu</a>, ask about <a class="text-link" href="enquiry.html">catering for your event</a>, or <a class="text-link" href="contact.html">get in touch</a> with the team.</p>
 
-                <hr>
-
-                <h2><i class="fa-solid fa-eye"></i>Our Vision</h2>
-                <p> Our vision is to become the leading provider of Mexican-inspired food in Cape Town, known for our commitment to quality, innovation, and customer satisfaction. We aim to expand our reach and bring the flavors of Mexico to more people, while staying true to our roots and values.</p>
-
-                <hr>
-
-                <h2><i class="fa-solid fa-heart"></i>Our Values</h2>
-                <ul>
-                    <li>Quality</li>
-                    <li>Innovation</li>
-                    <li>Customer Satisfaction</li>
-                    <li>Community</li>
-                </ul>
+                <div class="share-row" data-share></div>
             </main>
         </nav>
       </header>
-      <h4><i class="fa-solid fa-pepper-hot"></i>Tacos Locos</h4>
-      <p>&copy; 2015 Tacos Locos. All rights reserved.</p>
+      <h4><i class="fa-solid fa-pepper-hot" aria-hidden="true"></i>Tacos Locos</h4>
+      <p>&copy; 2015-<span data-year>2026</span> Tacos Locos. All rights reserved.</p>
+    <script src="js/scripts.js" defer></script>
 </body>
 </html>

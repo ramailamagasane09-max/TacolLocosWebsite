@@ -39,7 +39,7 @@ header {
 
 header nav {
     max-width: none;
-    width: 110%;
+    width: 100%;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -494,3 +494,680 @@ h4 i {
 header nav > h1 i {
     color: var(--white);
 }
+
+
+/* Enhancements stylesheet consolidated from enhancements.css */
+/* ============================================
+   Tacos Locos - Part 3 enhancements
+   Loaded AFTER style.css. Styles for the new interactive features:
+   accordion, tabs, modal, lightbox, gallery, map, forms, animations.
+   Uses the same colour variables as style.css (:root).
+   ============================================ */
+
+[hidden] { display: none !important; }
+
+html { scroll-padding-top: 12px; }
+
+@media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+}
+
+/* ---------- Accessibility helpers ---------- */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 8px;
+    background: var(--white);
+    color: var(--black);
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 6px;
+    z-index: 3000;
+}
+.skip-link:focus { left: 8px; }
+
+:focus-visible {
+    outline: 3px solid var(--purple-dark);
+    outline-offset: 2px;
+}
+header nav a:focus-visible,
+.lightbox :focus-visible {
+    outline-color: var(--white);
+}
+
+/* Current page in the navigation */
+header nav a[aria-current="page"] {
+    background-color: var(--white);
+    color: var(--purple);
+}
+
+/* ---------- Generic helpers ---------- */
+.hero-image {
+    display: block;
+    margin: 15px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.text-link {
+    color: var(--purple-dark);
+    font-weight: 700;
+    text-decoration: underline;
+}
+.text-link:hover { color: var(--black); }
+
+.btn-small {
+    display: inline-block;
+    background-color: var(--purple);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    padding: 9px 18px;
+    border: 2px solid var(--purple);
+    border-radius: 6px;
+    cursor: pointer;
+    line-height: 1.3;
+}
+.btn-small:hover { background-color: var(--purple-dark); border-color: var(--purple-dark); color: var(--white); }
+.btn-small.btn-outline { background-color: transparent; color: var(--purple); }
+.btn-small.btn-outline:hover { background-color: var(--purple); color: var(--white); }
+.btn-small[disabled] { opacity: 0.6; cursor: not-allowed; }
+
+/* Reset button in forms matches the outline look */
+button.btn-outline {
+    background-color: transparent;
+    color: var(--purple);
+    border: 2px solid var(--purple);
+}
+button.btn-outline:hover { background-color: var(--purple); color: var(--white); }
+
+/* ---------- Open / closed badge ---------- */
+.status-line { text-align: center; }
+.open-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    color: var(--white);
+    background-color: #555;
+}
+.open-badge i { color: var(--white); margin-right: 4px; }
+.open-badge.is-open { background-color: #1b6e3a; }
+.open-badge.is-closed { background-color: #7a1f2b; }
+
+/* ---------- Scroll reveal animation ---------- */
+@media (prefers-reduced-motion: no-preference) {
+    .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+    }
+    .hero-image { animation: float 6s ease-in-out infinite; }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ---------- Home page link cards ---------- */
+.link-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+.link-card {
+    display: block;
+    background-color: var(--pink-soft);
+    border: 4px solid var(--purple);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--black);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.link-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 26px rgba(75, 30, 130, 0.35);
+}
+.link-card i { display: block; font-size: 2rem; margin: 0 0 8px 0; color: var(--purple); }
+.link-card strong { display: block; font-size: 1.2rem; text-transform: uppercase; }
+
+/* ---------- Gallery ---------- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+.gallery-item {
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: var(--white);
+    border: 4px solid var(--purple);
+    border-radius: 12px;
+    cursor: zoom-in;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    transition: transform 0.4s ease;
+}
+.gallery-item:hover img,
+.gallery-item:focus-visible img { transform: scale(1.08); }
+.gallery-item::after {
+    content: attr(data-caption);
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 24px 10px 8px;
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.gallery-item:hover::after,
+.gallery-item:focus-visible::after { opacity: 1; }
+
+/* ---------- Lightbox ---------- */
+body.modal-open { overflow: hidden; }
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.92);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.lightbox.is-visible { opacity: 1; }
+.lightbox-figure { margin: 0; max-width: 90vw; text-align: center; }
+.lightbox-image {
+    display: block;
+    max-width: 90vw;
+    max-height: 78vh;
+    margin: 0 auto;
+    border: 4px solid var(--white);
+    border-radius: 8px;
+    background-color: var(--white);
+    transition: opacity 0.2s ease;
+}
+.lightbox.is-loading .lightbox-image { opacity: 0.3; }
+.lightbox-caption { color: var(--white); margin-top: 12px; font-weight: 700; }
+.lightbox-counter { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); color: #ddd; font-size: 0.9rem; }
+.lightbox-btn {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--purple);
+    color: var(--white);
+    font-size: 1.2rem;
+    letter-spacing: 0;
+    border: 2px solid var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox-btn:hover { background-color: var(--purple-dark); }
+.lightbox-close { top: 16px; right: 16px; }
+.lightbox-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 16px; top: 50%; transform: translateY(-50%); }
+
+/* ---------- Modal dialog ---------- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(30, 10, 60, 0.65);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.modal-overlay.is-visible { opacity: 1; }
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: var(--pink-soft);
+    border: 4px solid var(--purple);
+    border-radius: 12px;
+    padding: 28px;
+    transform: scale(0.94);
+    transition: transform 0.2s ease;
+}
+.modal-overlay.is-visible .modal { transform: scale(1); }
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    letter-spacing: 0;
+}
+.modal-title {
+    margin: 0 44px 16px 0;
+    font-size: 1.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--black);
+}
+.modal-layout { display: grid; grid-template-columns: 240px 1fr; gap: 24px; align-items: start; }
+.modal-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+    border: 4px solid var(--purple);
+    border-radius: 8px;
+    background-color: var(--white);
+}
+.modal p { margin: 0 0 12px 0; color: var(--black); }
+.modal-category { text-transform: uppercase; font-weight: 800; letter-spacing: 1px; color: var(--purple) !important; }
+.modal .product-price { color: var(--purple); font-weight: 700; font-size: 1.3rem; }
+
+@media (max-width: 600px) {
+    .modal-layout { grid-template-columns: 1fr; }
+    .modal-image { max-height: 40vh; }
+    .modal { padding: 20px; }
+    .lightbox-prev { left: 6px; }
+    .lightbox-next { right: 6px; }
+}
+
+/* ---------- Accordion ---------- */
+.accordion-tools { margin: 0 0 14px 0; }
+.accordion { display: block; margin: 0 0 24px 0; }
+.accordion-item {
+    background-color: var(--purple-light);
+    border-left: 8px solid var(--purple);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+main .accordion-heading {
+    margin: 0;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+.accordion-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 22px;
+    background: transparent;
+    color: var(--black);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    text-align: left;
+    border: 0;
+    border-radius: 0;
+}
+.accordion-trigger:hover { background-color: #e0d3f3; color: var(--black); }
+.accordion-trigger .accordion-icon { color: var(--purple); transition: transform 0.3s ease; }
+.accordion-trigger[aria-expanded="true"] .accordion-icon { transform: rotate(180deg); }
+.accordion-trigger i { color: var(--purple); margin-right: 10px; }
+.accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows 0.35s ease, visibility 0s linear 0.35s;
+}
+.accordion-panel.is-open {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition: grid-template-rows 0.35s ease, visibility 0s;
+}
+.accordion-panel-inner { overflow: hidden; }
+.accordion-panel-inner > *:first-child { margin-top: 0; }
+main .accordion-panel-inner { padding: 0 22px; }
+main .accordion-panel.is-open .accordion-panel-inner { padding-bottom: 6px; }
+main .accordion-panel-inner ul {
+    background: transparent;
+    border: 0;
+    padding: 0 0 0 20px;
+    margin: 0 0 14px 0;
+}
+
+/* ---------- Product controls and tabs ---------- */
+.product-controls {
+    background-color: var(--purple-light);
+    border-left: 8px solid var(--purple);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+}
+.control-row { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: flex-end; }
+.control-group { flex: 1 1 220px; }
+.control-group label { display: block; }
+.control-group input,
+.control-group select { max-width: 100%; }
+.tab-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0 0; }
+.tab {
+    background-color: var(--white);
+    color: var(--purple);
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    padding: 9px 20px;
+    border: 2px solid var(--purple);
+    border-radius: 999px;
+}
+.tab:hover { background-color: var(--purple-light); color: var(--purple-dark); }
+.tab.is-active,
+.tab[aria-selected="true"] { background-color: var(--purple); color: var(--white); }
+.results-status { font-weight: 700; margin: 8px 0 0 0; }
+main .results-status { margin-bottom: 16px; }
+
+.card-image-btn {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 8px;
+    cursor: zoom-in;
+    letter-spacing: 0;
+}
+.card-image-btn:hover { background: none; }
+.card-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 12px; }
+mark {
+    background-color: #ffe066;
+    color: var(--black);
+    padding: 0 2px;
+    border-radius: 3px;
+}
+.empty-state {
+    text-align: center;
+    background-color: var(--white);
+    border: 3px dashed var(--purple);
+    border-radius: 12px;
+    padding: 30px 20px;
+    margin: 20px 0;
+}
+.empty-state i { font-size: 2.4rem; color: var(--purple); margin: 0 0 10px 0; }
+.empty-state p { margin-bottom: 6px; }
+
+/* ---------- Forms ---------- */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+.form-field { margin-bottom: 18px; }
+.form-field label { display: block; }
+.form-field input,
+.form-field select,
+.form-field textarea { max-width: 100%; }
+.form-field input:not([type="checkbox"]),
+.form-field select { max-width: 480px; }
+.req { color: #a4133c; margin-left: 2px; }
+.form-hint { display: block; font-size: 0.88rem; color: #444; margin-top: 4px; }
+.field-error {
+    display: block;
+    color: #a4133c;
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-top: 4px;
+}
+.field-error:empty { display: none; }
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+    border-color: #a4133c;
+    background-color: #fff5f7;
+}
+.char-count { display: block; text-align: right; font-size: 0.85rem; color: #444; max-width: 100%; }
+.form-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 8px; }
+.form-status {
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 2px solid var(--purple);
+    background-color: var(--white);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+.form-status:empty { display: none; }
+.form-status i { color: inherit; margin-right: 4px; }
+.form-status.is-error { background-color: #fde8ec; border-color: #a4133c; color: #5c0a1f; }
+.form-status.is-success { background-color: #e3f5e9; border-color: #1b6e3a; color: #0f3d20; }
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+}
+
+/* ---------- Enquiry quote / email response ---------- */
+.response-panel {
+    background-color: var(--white);
+    border: 4px solid var(--purple);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin: 24px 0;
+}
+.response-panel.is-unavailable { border-color: #b45309; }
+.response-panel h3:focus { outline: none; }
+.response-panel.is-unavailable h3 i { color: #b45309; }
+.quote-list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 20px;
+    margin: 0 0 16px 0;
+}
+.quote-list dt { font-weight: 800; }
+.quote-list dd { margin: 0; }
+main .quote-notes {
+    background-color: #fff6e5;
+    border-left: 8px solid #b45309;
+    padding: 12px 20px 12px 36px;
+    margin: 0 0 16px 0;
+}
+.quote-footnote { font-size: 0.92rem; }
+.email-preview {
+    background-color: var(--grey);
+    border: 2px solid var(--purple);
+    border-radius: 8px;
+    padding: 14px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.9rem;
+    max-height: 300px;
+    overflow: auto;
+    margin: 0 0 16px 0;
+}
+@media (max-width: 600px) {
+    .quote-list { grid-template-columns: 1fr; gap: 2px; }
+    .quote-list dd { margin-bottom: 10px; }
+}
+
+/* ---------- Business hours ---------- */
+main .hours-list li { padding: 4px 8px; border-radius: 6px; }
+main .hours-list li.is-today { background-color: var(--white); font-weight: 700; }
+.today-tag {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 1px 10px;
+    border-radius: 999px;
+    background-color: var(--purple);
+    color: var(--white);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ---------- Leaflet map ---------- */
+.map {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    width: 100%;
+    height: 420px;
+    margin: 0 0 12px 0;
+    border: 4px solid var(--purple);
+    border-radius: 8px;
+}
+.map-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--purple-light);
+}
+.map-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; }
+.map-actions p { margin: 0 !important; }
+
+/* style.css gives every <img> inside <main> a border, margin and 100% width.
+   Leaflet's map tiles and markers are images too, so undo that inside the map. */
+main .leaflet-container img,
+main .leaflet-container .leaflet-tile {
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    max-width: none !important;
+    max-height: none !important;
+}
+main .leaflet-container .leaflet-marker-icon,
+main .leaflet-container .leaflet-marker-shadow { width: auto; }
+.leaflet-popup-content p { margin: 6px 0; }
+.map-popup a { color: var(--purple-dark); font-weight: 700; }
+
+/* ---------- Share buttons ---------- */
+.share-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 24px 0; }
+.share-label { font-weight: 700; margin-right: 4px; }
+.share-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--purple);
+    color: var(--white);
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.share-link:hover { background-color: var(--purple-dark); transform: translateY(-3px); color: var(--white); }
+
+/* ---------- Toast + back to top ---------- */
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translate(-50%, 20px);
+    max-width: 90vw;
+    padding: 12px 22px;
+    border-radius: 8px;
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: 700;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 2500;
+}
+.toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    font-size: 1.1rem;
+    letter-spacing: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+    z-index: 900;
+}
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
+}
+
+/* ---------- Respect "reduce motion" ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ---------- Small utilities ---------- */
+.text-center { text-align: center; }
+
+/* ---------- Lists inside <main> ----------
+   The navigation rules in style.css ("header nav ul li ...") also reach lists
+   inside <main>, because <main> sits inside <nav>. That made content lists
+   (hours, contact details, values) run across the page in a row, with no
+   padding and with uppercase white links. These rules, written with the same
+   "header nav main" prefix so they win, put content lists back to normal. */
+header nav main ul {
+    list-style: disc;
+    padding: 20px 30px 20px 50px;
+    margin: 0 0 20px 0;
+}
+header nav main ul li {
+    display: list-item;
+    margin: 0 0 6px 0;
+}
+header nav main ul li a {
+    display: inline;
+    padding: 0;
+    border-radius: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 700;
+    color: var(--purple-dark);
+    text-decoration: underline;
+}
+header nav main ul li a:hover {
+    background-color: transparent;
+    color: var(--black);
+}
+header nav main .hours-list li { margin-bottom: 4px; }
+header nav main .accordion-panel-inner ul { padding: 0 0 0 20px; }

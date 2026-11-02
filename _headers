@@ -1,0 +1,16 @@
+# Security and caching headers (used automatically by Netlify; ignored by hosts that don't support _headers)
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), payment=(), geolocation=(self)
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=86400
+
+/js/*
+  Cache-Control: public, max-age=86400

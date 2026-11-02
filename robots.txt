@@ -1,0 +1,7 @@
+# Tacos Locos - instructions for search engine crawlers
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /.vscode/
+
+Sitemap: https://tacos-locos.netlify.app/sitemap.xml
